@@ -8,7 +8,6 @@ LABEL dockerfile.release-date="2018.0.6.25"
 ARG service
 ARG maddress
 ARG mname
-ARG iaddress
 
 # Define environment variable
 #ENV SERVICE "${SERVICE}"
@@ -32,5 +31,6 @@ EXPOSE 10100/tcp
 
 # Start the tellicast-server upon image instantation
 # Use shell form expansion because exec form does not do shell expansion
-ENTRYPOINT /opt/tellitec/tc-cast-server/tc-cast-server -c /opt/tellitec/tc-cast-server/send.ini
+ENTRYPOINT ["/bin/bash","scripts/startup.sh"]
+
 

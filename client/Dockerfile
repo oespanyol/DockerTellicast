@@ -12,7 +12,6 @@ ARG username
 ARG userkey
 ARG maddress
 ARG mname
-ARG iaddress
 
 # ENV needed at runtime
 # Set ENV variables same as ARG 
@@ -37,5 +36,5 @@ RUN /bin/bash scripts/config.sh
 
 # Start the tellicast-client upon image instantation
 # Use shell form expansion because exec form does not do shell expansion
-ENTRYPOINT /usr/local/bin/tc-cast-client -c /etc/cast-client_${service}.ini
+ENTRYPOINT ["/bin/bash","scripts/startup.sh"]
 

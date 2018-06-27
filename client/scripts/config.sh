@@ -23,8 +23,6 @@ if [ "$service" = 'ter-1' ] || [ "$service" = 'bas' ]; then
    sed -i "s#^address=.*#address=$maddress#" /etc/cast-client_${service}.ini
    echo "Assign multicast announcement name=$mname"
    sed -i "s#^name=.*#name=$mname#" /etc/cast-client_${service}.ini
-   echo "Assign interface address interface_address=$iaddress"
-   sed -i "s#^interface_address=.*#interface_address=$iaddress#" /etc/cast-client_${service}.ini
 
 else
    echo "No specific configuration"

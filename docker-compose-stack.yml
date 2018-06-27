@@ -20,13 +20,7 @@ services:
 #
 # Tellicast Server
   tc-server-bas:
-    build: 
-      context: server/
-      args:
-       - service=bas
-       - maddress=232.223.122.1:4711
-       - mname=TSL-BAS
-       - iaddress=172.19.0.2
+    image: 'oespanyol/tellicast_tc-server-bas:latest'
     networks:
       - sat
     ports:
@@ -34,14 +28,7 @@ services:
 #
 # Basic Service
   tc-client-bas:
-    build: 
-      context: client/
-      args:
-       - service=bas
-       - maddress=232.223.122.1:4711
-       - mname=TSL-BAS
-       - username=ISRO-T
-       - userkey=TESTKEY
+    image: 'oespanyol/tellicast_tc-client-bas:latest'
     networks:
       - sat
     ports:
@@ -49,14 +36,7 @@ services:
 #
 # Terrestrial-1
   tc-client-ter-1:
-    build: 
-      context: client/
-      args:
-       - service=ter-1
-       - maddress=232.223.122.3:4711
-       - mname=TSL-TER-1
-       - username=ISRO-T
-       - userkey=TESTKEY
+    image: 'oespanyol/tellicast_tc-client-ter-1:latest'
     networks:
       - ter
     ports:
